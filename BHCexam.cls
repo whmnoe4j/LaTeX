@@ -71,11 +71,15 @@
 \RequirePackage{amsmath,amssymb,amsthm,bm,bbding,pifont,dsfont}
 \RequirePackage{mathtools}
 \RequirePackage{paralist,cases,tabularx}
-\RequirePackage{pstricks,pst-plot,xcolor,graphicx,tikz,pgfplots}
+\RequirePackage{pstricks,pst-plot,xcolor,graphicx,tikz,pgfplots,pgfmath}
 \RequirePackage{esvect,stmaryrd}
-\usetikzlibrary{calc,math,arrows}
+\usetikzlibrary{calc,math,arrows.meta,graphs}
 \RequirePackage[hidelinks]{hyperref}
-
+%column
+\RequirePackage{booktabs}
+\RequirePackage{colortbl}
+\RequirePackage{multirow}
+%column
 \if@marginline
 \marginparwidth = 2cm
 \if@sixteenkpaper
@@ -335,7 +339,7 @@ headsep=0.5cm]{geometry}
   }
 }
 \delimitershortfall-1sp
-\newcommand\abs[1]{\left|#1\right|}
+\newcommand{\abs}[1]{\left| #1 \right|}
 \renewcommand{\geq}{\geqslant}
 \renewcommand{\ge}{\geqslant}
 \renewcommand{\leq}{\leqslant}
@@ -362,6 +366,10 @@ headsep=0.5cm]{geometry}
 %\setlength{\lineskiplimit}{3bp}
 %\setlength{\lineskip}{3bp}
 %\setstretch{1.4}
+%罗马字体
+\newcommand{\rmnum}[1]{\romannumeral #1}
+\newcommand{\Rmnum}[1]{\expandafter\@slowromancap\romannumeral #1@}
+%
 \AtEndOfPackage{\makeatletter\input{BHCexam.cfg}\makeatother}
 
 
